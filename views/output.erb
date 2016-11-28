@@ -1,0 +1,11 @@
+<h1> Triangle Output </h1>
+
+<% if @test_triangle.not_a_triangle() %>
+  <h5>It's not a triangle!</h5>
+<% elsif @test_triangle.is_equilateral() %>
+  <h5>It's an equilateral triangle!</h5>
+<% elsif @test_triangle.is_isosceles() %>
+  <h5>It's an isosceles triangle!</h5>
+<% elsif @test_triangle.is_scalene() %>
+  <h5>It's an scalene triangle!</h5>
+<% end %>
