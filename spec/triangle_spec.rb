@@ -25,4 +25,11 @@ describe(Triangle) do
       expect(isosceles_triangle.is_isosceles).to(eq(true))
     end
   end
+
+  describe('#scalene') do
+    it('returns false if any two sides are equal length')do
+      scalene_triangle = Triangle.new(10, 10, 11)
+      expect(scalene_triangle.is_scalene).to(eq(false))    
+    end
+  end
 end
