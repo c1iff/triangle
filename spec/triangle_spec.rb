@@ -27,9 +27,27 @@ describe(Triangle) do
   end
 
   describe('#scalene') do
-    it('returns false if any two sides are equal length')do
+    it('returns false if any two sides are equal length') do
       scalene_triangle = Triangle.new(10, 10, 11)
-      expect(scalene_triangle.is_scalene).to(eq(false))    
+      expect(scalene_triangle.is_scalene).to(eq(false))
+    end
+
+    it('returns true if no two sides are equal length') do
+      scalene_triangle = Triangle.new(10, 9, 11)
+      expect(scalene_triangle.is_scalene).to(eq(true))
+    end
+
+  end
+
+  describe('#not_a_triangle') do
+    it('returns false if sides do create a triangle') do
+      non_triangle = Triangle.new(15, 15, 15)
+      expect(non_triangle.not_a_triangle).to(eq(false))
+    end
+
+    it('returns true if sides do not create a triangle') do
+      non_triangle = Triangle.new(1, 2, 15)
+      expect(non_triangle.not_a_triangle).to(eq(true))
     end
   end
 end
