@@ -3,11 +3,26 @@ require('triangle')
 
 describe(Triangle) do
   describe('#equilateral?') do
-    it('returns true if all three side are equal length') do
+    it('returns false if all three sides are not equal in length') do
       equilateral_triangle = Triangle.new(15, 15, 10)
       expect(equilateral_triangle.is_equilateral).to(eq(false))
     end
 
+    it('returns true if all three sides are equal in length') do
+      equilateral_triangle = Triangle.new(15, 15, 15)
+      expect(equilateral_triangle.is_equilateral).to(eq(true))
+    end
   end
 
+  describe('#isosceles') do
+    it('returns false if two sides are not equal in length') do
+      isosceles_triangle = Triangle.new(10, 11, 12)
+      expect(isosceles_triangle.is_isosceles).to(eq(false))
+    end
+
+    it('returns true if two side are equal in length') do
+      isosceles_triangle = Triangle.new(10, 10, 11)
+      expect(isosceles_triangle.is_isosceles).to(eq(true))
+    end
+  end
 end
